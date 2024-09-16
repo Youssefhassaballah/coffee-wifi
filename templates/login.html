@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% from 'bootstrap5/form.html' import render_form %}
+{% block title %}Login{% endblock %}
+{% block content %}
+    <div class="container">
+    <h1>Login</h1>
+        {%if is_denied == True%}
+            <h4 id="denied">The email or password is wrong</h4>
+        {% endif %}
+        {{ render_form(form, novalidate=True) }}
+    </div>
+{% endblock %}
